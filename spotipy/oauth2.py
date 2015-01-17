@@ -1,7 +1,7 @@
 from __future__ import print_function
 from future import standard_library
 standard_library.install_aliases()
-from builtins import object
+from builtins import object, bytes
 import base64
 import urllib.request, urllib.parse, urllib.error
 import requests
@@ -121,7 +121,7 @@ class SpotifyOAuth(object):
         if self.state:
             payload['state'] = self.state
 
-        auth_header = base64.b64encode(self.client_id + ':' + self.client_secret)
+        auth_header = base64.b64encode(bytes(self.client_id + ':' + self.client_secret, 'UTF-8')).decode()
         headers = {'Authorization': 'Basic %s' % auth_header}
 
 
