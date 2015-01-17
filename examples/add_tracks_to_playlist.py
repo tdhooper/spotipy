@@ -1,3 +1,4 @@
+from __future__ import print_function
 
 # Adds tracks to a playlist
 
@@ -12,7 +13,7 @@ if len(sys.argv) > 3:
     playlist_id = sys.argv[2]
     track_ids = sys.argv[3:]
 else:
-    print "Usage: %s username playlist_id track_id ..." % (sys.argv[0],)
+    print("Usage: %s username playlist_id track_id ..." % (sys.argv[0],))
     sys.exit()
 
 scope = 'playlist-modify-public'
@@ -22,6 +23,6 @@ if token:
     sp = spotipy.Spotify(auth=token)
     sp.trace = False
     results = sp.user_playlist_add_tracks(username, playlist_id, track_ids)
-    print results
+    print(results)
 else:
-    print "Can't get token for", username
+    print("Can't get token for", username)

@@ -1,3 +1,4 @@
+from __future__ import print_function
 # Creates a playlist for a user
 
 import pprint
@@ -13,7 +14,7 @@ if len(sys.argv) > 2:
     username = sys.argv[1]
     playlist_name = sys.argv[2]
 else:
-    print "Usage: %s username playlist-name" % (sys.argv[0],)
+    print("Usage: %s username playlist-name" % (sys.argv[0],))
     sys.exit()
 
 token = util.prompt_for_user_token(username)
@@ -24,4 +25,4 @@ if token:
     playlists = sp.user_playlist_create(username, playlist_name)
     pprint.pprint(playlists)
 else:
-    print "Can't get token for", username
+    print("Can't get token for", username)

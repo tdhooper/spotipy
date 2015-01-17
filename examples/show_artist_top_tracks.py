@@ -1,3 +1,4 @@
+from __future__ import print_function
 # shows artist info for a URN or URL
 
 import spotipy
@@ -13,4 +14,4 @@ sp = spotipy.Spotify()
 response = sp.artist_top_tracks(urn)
 
 for track in response['tracks']:
-    print track['name']
+    print(track['name'])

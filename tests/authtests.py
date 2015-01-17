@@ -1,5 +1,6 @@
 # -*- coding: latin-1 -*-
 
+from __future__ import print_function
 import spotipy
 from  spotipy import util
 import unittest
@@ -174,4 +175,4 @@ if __name__ == '__main__':
         spotify.trace = False
         unittest.main()
     else:
-        print "Usage: %s username" % (sys.argv[0],)
+        print("Usage: %s username" % (sys.argv[0],))
