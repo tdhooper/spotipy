@@ -1,6 +1,9 @@
 from __future__ import print_function
+from future import standard_library
+standard_library.install_aliases()
+from builtins import object
 import base64
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import requests
 import os
 import json
@@ -87,7 +90,7 @@ class SpotifyOAuth(object):
         if self.state:
             payload['state'] = self.state
 
-        urlparams = urllib.urlencode(payload)
+        urlparams = urllib.parse.urlencode(payload)
 
         return "%s?%s" % (self.OAUTH_AUTHORIZE_URL, urlparams)
 

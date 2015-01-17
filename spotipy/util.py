@@ -1,5 +1,6 @@
 from __future__ import print_function
 from __future__ import absolute_import
+from builtins import input
 
 # shows a user's playlists (need to be authenticated via oauth)
 
@@ -75,7 +76,7 @@ def prompt_for_user_token(username, scope=None, client_id = None,
 
         print()
         print()
-        response = raw_input("Enter the URL you were redirected to: ")
+        response = input("Enter the URL you were redirected to: ")
         print()
         print() 
 
